@@ -1,0 +1,76 @@
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Please fill out the information below</h5>
+      </div>
+      <div class="modal-body">
+        <form class="form-control">
+          <div>Make <input id="make" class="user-input" type="text"></div>
+          <div>Model <input id="model" class="user-input" type="text"></div>
+          <div>Year <input id="year" class="user-input" type="number"></div>
+          <div>Mileage <input id="mileage" class="user-input" type="number"></div>
+          <div>City <input id="city" class="user-input" type="text"></div>
+          <div>Body Style
+            <label class="radio-inline"><input value="sedan" type="radio" name="optradio">Sedan</label>
+            <label class="radio-inline"><input value="coupe" type="radio" name="optradio">Coupe</label>
+            <label class="radio-inline"><input value="hatchback" type="radio" name="optradio">Hatchback</label></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="submit-btn" data-dissmiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Orange County Car Trade App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="create-post">Create a Post</a>
+      </li>
+    </ul>
+    <ul class="nav pull-right">
+      <li class="dropdown" id="menuLogin">
+        <a class="dropdown-toggle" href="/" data-toggle="dropdown" id="navLogin">Login</a>
+        <div class="dropdown-menu" style="padding:17px;">
+          <form class="form" id="formLogin">
+            <input name="username" id="username" type="text" placeholder="Username">
+            <input name="password" id="password" type="password" placeholder="Password"><br>
+            <button type="button" id="btnLogin" class="btn">Login</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Content-->
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>Welcome To Orange County Car Trade</h1>
+    <p>A web application where you can trade your car(s) with other people who live in the Orange County area.</p>
+    <p>Write more details/mission statements</p>
+  </div>
+
+  <!-- New posts will be added here -->
+  <div id="post"></div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <span class="text-muted">Sticky Footer</span>
+  </div>
+</footer>
