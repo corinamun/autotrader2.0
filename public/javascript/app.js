@@ -9,12 +9,13 @@ function createPost() {
 }
 
 function userInput() {
-  const make = $("#make").val();
-  const model = $("#model").val();
-  const year = $("#year").val();
-  const mileage = $("#mileage").val();
-  const city = $("#city").val();
+  const make = $("#make").val().trim();
+  const model = $("#model").val().trim();
+  const year = $("#year").val().trim();
+  const mileage = $("#mileage").val().trim();
+  const city = $("#city").val().trim();
   const bodyStyle = $(".radio-inline [name = 'optradio']:checked").val();
+  
   console.log(make);
   console.log(model);
   console.log(year);
