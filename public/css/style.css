@@ -1,15 +1,17 @@
 body {
   padding-top: 4.5rem;
+  overflow: scroll;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   line-height: 60px;
   background-color: #353b40;
 }
 
-.well-lg {
-  background-color: #dddddd;
+.user-input {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
