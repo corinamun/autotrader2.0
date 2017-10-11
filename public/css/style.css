@@ -1,7 +1,7 @@
 body {
   padding-top: 4.5rem;
   overflow: scroll;
-  background-color: #5cdb95;
+  background-color: #ffccbc;
 }
 
 footer {
@@ -9,7 +9,17 @@ footer {
   bottom: 0;
   width: 100%;
   line-height: 60px;
-  background-color: #379683;
+  background-color: #77a6f7;
+}
+
+.jumbotron {
+  background-color: #00887a;
+  color: #ffffff;
+  font-family: georgia;
+}
+
+.navbar {
+  background-color: #ffccbc;
 }
 
 #post {
@@ -25,13 +35,14 @@ footer {
 .user-input {
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: #8ee4af;
 }
 
 .card-img-top {
   height: 150px;
+  background-color: #00887a;
 }
 
 .card-img-top {
   height: 150px;
+  background-color: #ffccbc;
 }
