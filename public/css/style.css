@@ -17,10 +17,19 @@ footer {
   justify-content: center;
 }
 
+#post {
+  display: flex;
+  justify-content: center;
+}
+
 .user-input {
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: #8ee4af;
+}
+
+.card-img-top {
+  height: 150px;
 }
 
 .card-img-top {
