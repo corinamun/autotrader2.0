@@ -11,7 +11,16 @@ footer {
   background-color: #353b40;
 }
 
+#post {
+  display: flex;
+  justify-content: center;
+}
+
 .user-input {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.card-img-top {
+  height: 150px;
 }
