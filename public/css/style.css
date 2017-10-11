@@ -1,6 +1,7 @@
 body {
   padding-top: 4.5rem;
   overflow: scroll;
+  background-color: #5cdb95;
 }
 
 footer {
@@ -8,7 +9,12 @@ footer {
   bottom: 0;
   width: 100%;
   line-height: 60px;
-  background-color: #353b40;
+  background-color: #379683;
+}
+
+#post {
+  display: flex;
+  justify-content: center;
 }
 
 #post {
@@ -19,6 +25,11 @@ footer {
 .user-input {
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: #8ee4af;
+}
+
+.card-img-top {
+  height: 150px;
 }
 
 .card-img-top {
