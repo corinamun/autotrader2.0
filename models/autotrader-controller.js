@@ -1,4 +1,4 @@
-//CONTROLLER
+"use strict";
 
 module.exports = function(sequelize, DataTypes) {
   var trades = sequelize.define("trades", {
@@ -61,6 +61,7 @@ module.exports = function(sequelize, DataTypes) {
     mpg: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
       validate: {
         isAlpha: false,
         contains: '/'
@@ -68,15 +69,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     engine: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "",
     },
     transmission: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "",
     },
     drivetype: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
       validate: {
         isIn: [['automatic', 'Automatic', 'manual', 'Manual']],
         isAlpha: true
@@ -85,6 +89,7 @@ module.exports = function(sequelize, DataTypes) {
     features: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
       validate: {
         len: [0, 150],
         isAlpha: true
@@ -93,6 +98,7 @@ module.exports = function(sequelize, DataTypes) {
     description: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
       validate: {
         len: [0, 500],
         isAlpha: true
@@ -101,6 +107,7 @@ module.exports = function(sequelize, DataTypes) {
     interest: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
       validate: {
         len: [0, 100],
         isAlphanumeric: true
@@ -109,6 +116,7 @@ module.exports = function(sequelize, DataTypes) {
     contact: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
       validate: {
         len: [7, 11],
         isNumeric: true

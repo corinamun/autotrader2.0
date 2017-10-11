@@ -4,6 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require("path");
 
+var db = require("./models");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -17,6 +19,8 @@ app.get("/map", (req, res) => {
   res.render("map");
 });
 
-app.listen(PORT, () => {
-  console.log(`server listening on ${PORT}`);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, () => {
+    console.log(`server listening on ${PORT}`);
+  });
 });
