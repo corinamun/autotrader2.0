@@ -116,7 +116,7 @@ module.exports = function(sequelize, DataTypes) {
     contact: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "",
+      defaultValue: "", 
       validate: {
         len: [7, 11],
         isNumeric: true
