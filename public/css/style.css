@@ -1,6 +1,7 @@
 body {
   padding-top: 4.5rem;
   overflow: scroll;
+  background-color: #5cdb95;
 }
 
 footer {
@@ -8,10 +9,11 @@ footer {
   bottom: 0;
   width: 100%;
   line-height: 60px;
-  background-color: #353b40;
+  background-color: #379683;
 }
 
 .user-input {
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: #8ee4af;
 }

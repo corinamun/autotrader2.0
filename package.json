@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/corinamun/autotrader2.0#readme",
   "dependencies": {
-    "express": "^4.16.1",
+    "express": "^4.16.2",
     "express-handlebars": "^3.0.0"
   }
 }
