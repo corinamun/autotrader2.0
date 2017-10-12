@@ -3,12 +3,38 @@ const db = require("../models");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+  res.redirect("/trades");
+});
+
+router.get("/trades", (req, res) => {
   db.trades.findAll({}).then((data) => {
-    let hbsObject = {
+    const hbsObject = {
       trades: data
     };
     return res.render("index", hbsObject);
 
+  });
+});
+
+router.get("/trades/api", (req, res) => {
+  db.trades.findAll({}).then((data) => {
+    return res.json(data);
+  });
+});
+
+router.post("/trades/api", (req, res) => {
+  db.trades.create({
+    make: req.body.make,
+    model: req.body.model,
+    year: req.body.year,
+    mileage: req.body.mileage,
+    location: req.body.city,
+    color: req.body.color,
+    style: req.body.optradio
+  }).then(() => {
+    return res.redirect("/trades");
+  }).catch((err) => {
+    log.error(`ERR = ${err}`);
   });
 });
 

@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- Modal for creating new post -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -6,24 +6,46 @@
         <h5 class="modal-title">Please fill out the information below</h5>
       </div>
       <div class="modal-body">
-        <form class="form-control">
-          <div>Make <input id="make" class="user-input" type="text"></div>
-          <div>Model <input id="model" class="user-input" type="text"></div>
-          <div>Year <input id="year" class="user-input" type="number"></div>
-          <div>Mileage <input id="mileage" class="user-input" type="number"></div>
-          <div>City <input id="city" class="user-input" type="text"></div>
+        <form action="/trades/api" class="form-control" method="post">
+          <div>Make <input id="make" class="user-input" type="text" name="make"></div>
+          <div>Model <input id="model" class="user-input" type="text" name="model"></div>
+          <div>Year <input id="year" class="user-input" type="number" name="year"></div>
+          <div>Mileage <input id="mileage" class="user-input" type="number" name="mileage"></div>
+          <div>City <input id="city" class="user-input" type="text" name="city"></div>
+          <div>Color <input id="color" class="user-input" type="text" name="color"></div>
           <div>Body Style
-            <label class="radio-inline"><input value="sedan" type="radio" name="optradio">Sedan</label>
-            <label class="radio-inline"><input value="coupe" type="radio" name="optradio">Coupe</label>
-            <label class="radio-inline"><input value="hatchback" type="radio" name="optradio">Hatchback</label></div>
+            <label class="radio-inline"><input value="Sedan" type="radio" name="optradio"> Sedan</label>
+            <label class="radio-inline"><input value="Coupe" type="radio" name="optradio"> Coupe</label>
+            <label class="radio-inline"><input value="Hatchback" type="radio" name="optradio"> Hatchback</label>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-btn" data-dissmiss="modal">Submit</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="submit-btn" data-dissmiss="modal">Submit</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal for more info-->
+{{#each trades}}
+<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{this.make}} {{this.model}}</h5>
+      </div>
+      <div class="modal-body">
+        <p>Seller</p>
+        <p>Transmission</p>
+        <p>More Info</p>
+        <p>More Info</p>
+        <p>More Info</p>
+        <p>More Info</p>
+        <p>Contact Info</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -68,20 +90,22 @@
     <div class="row text-center container-fluid">
 
       {{#each trades}}
-      <div class="col-lg-4">
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="https://www.lamborghini.com/en-en/sites/en-en/files/DAM/lamborghini/share%20img/centenario-facebook-og.jpg" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">{{this.make}} {{this.model}}</h4>
-            <ul class="card-text">
-              <li>Year: {{this.year}}</li>
-              <li>Mileage: {{this.mileage}}</li>
-              <li>Location: {{this.location}}</li>
-            </ul>
-            <a href="#" class="btn btn-primary">More Info</a>
+        <div class="col-lg-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="https://www.lamborghini.com/en-en/sites/en-en/files/DAM/lamborghini/share%20img/centenario-facebook-og.jpg" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">{{this.make}} {{this.model}}</h4>
+              <ul class="card-text">
+                <li>Year: {{this.year}}</li>
+                <li>Mileage: {{this.mileage}}</li>
+                <li>Location: {{this.location}}</li>
+                <li>Color: {{this.color}}</li>
+                <li>Style: {{this.style}}</li>
+              </ul>
+              <button type="button" class="btn btn-primary">More Info</button>
+            </div>
           </div>
         </div>
-      </div>
       {{/each}}
 
     </div>
