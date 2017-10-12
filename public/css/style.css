@@ -1,7 +1,7 @@
 body {
   padding-top: 4.5rem;
   overflow: scroll;
-  background-color: #ffccbc;
+  background-color: #080f5b;
 }
 
 footer {
@@ -13,9 +13,8 @@ footer {
 }
 
 .jumbotron {
-  background-color: #00887a;
-  color: #ffffff;
-  font-family: georgia;
+  background-color: #0d19a3;
+  color: #15db95;
 }
 
 .navbar {
