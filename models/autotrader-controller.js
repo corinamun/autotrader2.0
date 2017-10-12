@@ -38,88 +38,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-        isAlpha: true
+        notEmpty: true
       }
     },
     color: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-        isAlpha: true
+        notEmpty: true
       }
     },
     style: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-        isAlpha: true
-      }
-    },
-    mpg: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
-      validate: {
-        isAlpha: false,
-        contains: '/'
-      }
-    },
-    engine: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-    },
-    transmission: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-    },
-    drivetype: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-      validate: {
-        isIn: [['automatic', 'Automatic', 'manual', 'Manual']],
-        isAlpha: true
-      }
-    },
-    features: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-      validate: {
-        len: [0, 150],
-        isAlpha: true
-      }
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-      validate: {
-        len: [0, 500],
-        isAlpha: true
-      }
-    },
-    interest: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "",
-      validate: {
-        len: [0, 100],
-        isAlphanumeric: true
-      }
-    },
-    contact: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "", 
-      validate: {
-        len: [7, 11],
-        isNumeric: true
+        notEmpty: true
       }
     }
   });
