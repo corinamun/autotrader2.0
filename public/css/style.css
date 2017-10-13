@@ -21,11 +21,6 @@ label {
   justify-content: center;
 }
 
-#post {
-  display: flex;
-  justify-content: center;
-}
-
 .btn-primary {
   margin-bottom: 10px;
 }
@@ -40,14 +35,11 @@ label {
   height: 150px;
 }
 
-.card-img-top {
-  height: 150px;
-}
-
 .card {
   margin-bottom: 10px;
 }
 
-.modal-body p {
+.modal-body {
     word-wrap: break-word;
+    overflow: scroll;
 }

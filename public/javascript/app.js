@@ -28,7 +28,7 @@ function userInput() {
   console.log(bodyStyle);
 }
 
-$('#detail-modal').on('show.bs.modal', function (event) {
+$('#detail-modal').on('show.bs.modal', function(event) {
   const button = $(event.relatedTarget);
   const make = button.data("make");
   const model = button.data("model");
@@ -42,8 +42,4 @@ $('#detail-modal').on('show.bs.modal', function (event) {
   modal.find("#transmission").text(`Transmission Type: ${transmission}`);
   modal.find("#description").text(`Description/Comments: ${description}`);
   modal.find("#zipcode").text(`Zipcode: ${zipcode}`);
-});
-
-$(".btn-primary").on("click", () => {
-  $("#map").load("./../map.html");
 });
