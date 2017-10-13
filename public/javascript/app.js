@@ -31,6 +31,13 @@ function userInput() {
 function moreInfo() {
   $(".btn-primary").on("click", () => {
     $("#detail-modal").modal("show");
+    // $('#detail-modal').on('show.bs.modal', function(event) {
+    //   const button = $(event.relatedTarget)
+    //   const recipient = button.data("id");
+    //   const modal = $(this)
+    //   modal.find('.modal-title').text('New message to ' + recipient)
+    //   modal.find('.modal-body input').val(recipient)
+    // });
   });
 }
 
