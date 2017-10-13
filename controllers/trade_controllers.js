@@ -33,7 +33,8 @@ router.post("/trades/api", (req, res) => {
     style: req.body.optradio,
     transmission: req.body.transmission,
     description: req.body.description,
-    contact: req.body.contact
+    contact: req.body.contact,
+    zipcode: req.body.zipcode
   }).then(() => {
     return res.redirect("/trades");
   }).catch((err) => {

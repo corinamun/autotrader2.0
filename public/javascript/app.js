@@ -35,9 +35,15 @@ $('#detail-modal').on('show.bs.modal', function (event) {
   const contact = button.data("contact");
   const transmission = button.data("transmission");
   const description = button.data("description");
+  const zipcode = button.data("zipcode");
   const modal = $(this)
   modal.find('.modal-title').text(`More Information on ${make} ${model}`);
   modal.find("#contact").text(`Contact Info: ${contact}`);
   modal.find("#transmission").text(`Transmission Type: ${transmission}`);
   modal.find("#description").text(`Description/Comments: ${description}`);
+  modal.find("#zipcode").text(`Zipcode: ${zipcode}`);
 })
+
+$(".btn-primary").on("click", () => {
+  $("#map").load("./../map.html");
+});
