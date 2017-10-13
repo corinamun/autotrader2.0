@@ -35,11 +35,11 @@ label {
   height: 150px;
 }
 
+
 .card {
   margin-bottom: 10px;
 }
 
-.modal-body {
+.modal-body p {
     word-wrap: break-word;
-    overflow: scroll;
 }
