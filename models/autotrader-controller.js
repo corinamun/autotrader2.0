@@ -14,8 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-        isAlphanumeric: true
+        notEmpty: true
       }
     },
     year: {
@@ -39,6 +38,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty: true
+      }
+    },
+    zipcode: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validata: {
+        notEmpty: true,
+        isNumeric: true
       }
     },
     color: {

@@ -12,6 +12,7 @@
           <div>Year <input id="year" class="user-input" type="number" name="year"></div>
           <div>Mileage <input id="mileage" class="user-input" type="number" name="mileage"></div>
           <div>City <input id="city" class="user-input" type="text" name="city"></div>
+          <div>Zipcode <input id="zipcode" class="user-input" type="text" name="zipcode"></div>
           <div>Color <input id="color" class="user-input" type="text" name="color"></div>
           <div>Body Style
             <label class="radio-inline"><input value="Sedan" type="radio" name="optradio"> Sedan</label>
@@ -54,21 +55,21 @@
 
 
   <!-- Modal for more info-->
-  {{#each trades}}
-    <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{this.make}}</h5>
-          </div>
-          <div class="modal-body">
-            <p>Seller</p>
-            <p>Transmission</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>Contact Info</p>
+
+  <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+          <p id="contact"></p>
+          <p id="transmission"></p>
+          <p id="description"></p>
+          <p id="zipcode"></p>
+          <div id="map">
+            
+
           </div>
         </div>
       </div>
@@ -92,7 +93,10 @@
                 <li>Color: {{this.color}}</li>
                 <li>Style: {{this.style}}</li>
               </ul>
-              <button type="button" class="btn btn-primary" data-id={{this.id}}>More Info</button>
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-description= {{this.description}}
+                data-zipcode= {{this.zipcode}}>More Info</button>
+
             </div>
           </div>
         </div>
