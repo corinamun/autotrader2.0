@@ -18,14 +18,6 @@ function userInput() {
   const city = $("#city").val().trim();
   const color = $("#color").val().trim();
   const bodyStyle = $(".radio-inline [name = 'optradio']:checked").val();
-
-  console.log(make);
-  console.log(model);
-  console.log(year);
-  console.log(mileage);
-  console.log(city);
-  console.log(color);
-  console.log(bodyStyle);
 }
 
 $("#detail-modal").on("show.bs.modal", (event) => {
@@ -37,10 +29,6 @@ $("#detail-modal").on("show.bs.modal", (event) => {
   const description = button.data("description");
   const zipcode = button.data("zipcode");
   const modal = $(this);
-
-  console.log(contact);
-  console.log(description);
-  console.log(zipcode);
 
   $(".modal-title").text(`More Information on ${make} ${model}`);
   $("#info-contact").text(`Contact Info: ${contact}`);
