@@ -30,11 +30,14 @@ router.post("/trades/api", (req, res) => {
     mileage: req.body.mileage,
     location: req.body.city,
     color: req.body.color,
-    style: req.body.optradio
+    style: req.body.optradio,
+    transmission: req.body.transmission,
+    description: req.body.description,
+    contact: req.body.contact
   }).then(() => {
     return res.redirect("/trades");
   }).catch((err) => {
-    log.error(`ERR = ${err}`);
+    console.error(`ERR = ${err}`);
   });
 });
 

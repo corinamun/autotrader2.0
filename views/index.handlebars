@@ -18,6 +18,12 @@
             <label class="radio-inline"><input value="Coupe" type="radio" name="optradio"> Coupe</label>
             <label class="radio-inline"><input value="Hatchback" type="radio" name="optradio"> Hatchback</label>
           </div>
+          <div>Transmission
+            <label class="radio-inline"><input value="Automatic" type="radio" name="transmission"> Automatic</label>
+            <label class="radio-inline"><input value="Manual" type="radio" name="transmission"> Manual</label>
+          </div>
+          <div>Description <textarea id="description" class="user-input" type="text" name="description"></textarea></div>
+          <div>Contact <input id="contact" class="user-input" type="text" name="contact"></div>
           <button type="submit" class="btn btn-primary" id="submit-btn" data-dissmiss="modal">Submit</button>
         </form>
       </div>
@@ -40,7 +46,6 @@
         <a class="nav-link" href="#" id="create-post">Create a Post</a>
       </li>
     </ul>
-    
 
   </div>
 </nav>
@@ -54,26 +59,20 @@
   </div>
 
   <!-- Modal for more info-->
-  {{#each trades}}
-    <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{this.make}}</h5>
-          </div>
-          <div class="modal-body">
-            <p>Seller</p>
-            <p>Transmission</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>More Info</p>
-            <p>Contact Info</p>
-          </div>
+  <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+          <p id="contact"></p>
+          <p id="transmission"></p>
+          <p id="description"></p>
         </div>
       </div>
     </div>
-    {{/each}}
+  </div>
 
   <!-- New posts will be added here -->
   <div id="post">
@@ -92,7 +91,7 @@
                 <li>Color: {{this.color}}</li>
                 <li>Style: {{this.style}}</li>
               </ul>
-              <button type="button" class="btn btn-primary" data-id={{this.id}}>More Info</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-description= {{this.description}}>More Info</button>
             </div>
           </div>
         </div>
@@ -100,7 +99,6 @@
 
     </div>
   </div>
-
 </div>
 
 <!-- Footer -->
