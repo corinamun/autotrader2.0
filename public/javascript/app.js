@@ -28,7 +28,7 @@ function userInput() {
   console.log(bodyStyle);
 }
 
-$('#detail-modal').on('show.bs.modal', function(event) {
+$("#detail-modal").on("show.bs.modal", (event) => {
   const button = $(event.relatedTarget);
   const make = button.data("make");
   const model = button.data("model");
@@ -36,10 +36,16 @@ $('#detail-modal').on('show.bs.modal', function(event) {
   const transmission = button.data("transmission");
   const description = button.data("description");
   const zipcode = button.data("zipcode");
-  const modal = $(this)
-  modal.find('.modal-title').text(`More Information on ${make} ${model}`);
-  modal.find("#contact").text(`Contact Info: ${contact}`);
-  modal.find("#transmission").text(`Transmission Type: ${transmission}`);
-  modal.find("#description").text(`Description/Comments: ${description}`);
-  modal.find("#zipcode").text(`Zipcode: ${zipcode}`);
+  const modal = $(this);
+
+  console.log(contact);
+  console.log(description);
+  console.log(zipcode);
+
+  $(".modal-title").text(`More Information on ${make} ${model}`);
+  $("#info-contact").text(`Contact Info: ${contact}`);
+  $("#info-transmission").text(`Transmission Type: ${transmission}`);
+  $("#info-description").text(`Description/Comments: ${description}`);
+  $("#info-zipcode").text(`Zipcode: ${zipcode}`);
+  $("#map").attr("src", `https://www.google.com/maps/embed/v1/search?key=AIzaSyCbRPJ4WPt885Uvh3ORlze25kJN6VsSE4A&q=${zipcode}`);
 });
