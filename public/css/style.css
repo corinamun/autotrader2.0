@@ -43,3 +43,9 @@ label {
 .modal-body p {
     word-wrap: break-word;
 }
+
+#button-row {
+  display: flex;
+  justify-content: space-around;
+
+}

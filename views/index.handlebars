@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Please fill out the information below</h5>
+        <h5 class="modal-title">Please fill out the information below (REQUIRED)</h5>
       </div>
       <div class="modal-body">
         <form action="/trades/api" class="form-control" method="post">
@@ -98,8 +98,13 @@
                 <li>Color: {{this.color}}</li>
                 <li>Style: {{this.style}}</li>
               </ul>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-description= {{this.description}}
-                data-zipcode= {{this.zipcode}}>More Info</button>
+              <div id="button-row">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-description= {{this.description}}
+                  data-zipcode= {{this.zipcode}}>More Info</button>
+                <form action="/trades/{{this.id}}?_method=DELETE" method="post">
+                  <button id="delete-button" class="btn btn-danger" type="submit" name="button">Delete Post</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

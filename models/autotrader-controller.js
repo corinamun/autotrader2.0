@@ -71,7 +71,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
     },
     contact: {
       type: DataTypes.STRING,
@@ -79,8 +82,6 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
-<<<<<<< Updated upstream
-=======
     },
     userID: {
       type: DataTypes.STRING,
@@ -88,7 +89,6 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isNumeric: true
       }
->>>>>>> Stashed changes
     }
   });
   return trades;
