@@ -3,17 +3,17 @@ const db = require("../models");
 const router = express.Router();
 const userid = "";
 
-$('document').on('click', function() {
-  FB.getLoginStatus(function(response) {
-    console.log("loginstatus just ran");
-    userid = response.authResponse.userID;
-
-    console.log("your userID is " + userid);
-
-    console.log(response);
-    console.log(response.status + "is your current login state with facebook.");
-  });
-});
+// //$('document').on('click', function() {
+//   FB.getLoginStatus(function(response) {
+//     console.log("loginstatus just ran");
+//     userid = response.authResponse.userID;
+//
+//     console.log("your userID is " + userid);
+//
+//     console.log(response);
+//     console.log(response.status + "is your current login state with facebook.");
+//   });
+// });
 
 router.get("/", (req, res) => {
   res.redirect("/trades");
