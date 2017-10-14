@@ -1,6 +1,12 @@
 const express = require("express");
 const db = require("../models");
 const router = express.Router();
+<<<<<<< Updated upstream
+=======
+const helper = require("../public/javascript/app");
+
+
+>>>>>>> Stashed changes
 
 router.get("/", (req, res) => {
   res.redirect("/trades");
@@ -34,7 +40,12 @@ router.post("/trades/api", (req, res) => {
     transmission: req.body.transmission,
     description: req.body.description,
     contact: req.body.contact,
+<<<<<<< Updated upstream
     zipcode: req.body.zipcode
+=======
+    zipcode: req.body.zipcode,
+    userID: req.body.userID
+>>>>>>> Stashed changes
   }).then(() => {
     return res.redirect("/trades");
   }).catch((err) => {
@@ -42,4 +53,21 @@ router.post("/trades/api", (req, res) => {
   });
 });
 
+<<<<<<< Updated upstream
+=======
+router.post("/trades/:id", (req, res) => {
+  if (this.userID === currentuserID) {
+    db.trades.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then((result) => {
+      return res.redirect("/trades");
+    });
+  } else {
+    alert("You don't own this post!")
+  };
+});
+
+>>>>>>> Stashed changes
 module.exports = router;
