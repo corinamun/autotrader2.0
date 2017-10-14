@@ -12,7 +12,6 @@ router.get("/trades", (req, res) => {
       trades: data
     };
     return res.render("index", hbsObject);
-
   });
 });
 
@@ -39,6 +38,16 @@ router.post("/trades/api", (req, res) => {
     return res.redirect("/trades");
   }).catch((err) => {
     console.error(`ERR = ${err}`);
+  });
+});
+
+router.post("/trades/:id", (req, res) => {
+  db.trades.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then((result) => {
+    return res.redirect("/trades");
   });
 });
 
