@@ -16,7 +16,7 @@
   "production": {
     "username": "root",
     "password": "Insecure",
-    "database": "database_production",
+    "database": "autotraderdb",
     "host": "127.0.0.1",
     "use_env_variable": "JawsDB_URL",
     "dialect": "mysql"
