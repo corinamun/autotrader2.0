@@ -2,27 +2,25 @@ function createPost() {
   console.log("FB loginstatus about to run");
   FB.getLoginStatus(function(response) {
     console.log("loginstatus just ran");
-    statusChangeCallback(response);
+    // statusChangeCallback(response);
 
     console.log(response);
     console.log(response.status + "is your current login state with facebook.");
 
     if (response.status === "connected") {
-      $("#create-post").on("click", () => {
-        $("#modal").modal("show");
-      });
+      $("#modal").modal("show");
     } else {
       alert("You are not logged in yet! Please login through facebook before posting any trades!")
+      return;
     };
-  });
-
-  $("#submit-btn").on("click", () => {
-    $("#modal").modal("hide");
-    userInput();
   });
 }
 
-createPost();
+$("#submit-btn").on("click", () => {
+  $("#modal").modal("hide");
+  userInput();
+});
+
 
 function userInput() {
   const make = $("#make").val().trim();
@@ -50,4 +48,8 @@ $("#detail-modal").on("show.bs.modal", (event) => {
   $("#info-description").text(`Description/Comments: ${description}`);
   $("#info-zipcode").text(`Zipcode: ${zipcode}`);
   $("#map").attr("src", `https://www.google.com/maps/embed/v1/search?key=AIzaSyCbRPJ4WPt885Uvh3ORlze25kJN6VsSE4A&q=${zipcode}`);
+});
+
+$('#create-post').on('click', function() {
+  createPost();
 });
