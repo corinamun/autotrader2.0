@@ -84,7 +84,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     userID: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isNumeric: true
