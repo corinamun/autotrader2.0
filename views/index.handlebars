@@ -96,7 +96,7 @@
                 <li>Style: {{this.style}}</li>
               </ul>
               <div id="button-row">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-zipcode= {{this.zipcode}} value= "{{this.description}}">More Info</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-zipcode= {{this.zipcode}} data-year = {{this.year}} data-description= "{{this.description}}">More Info</button>
                 <form action="/trades/{{this.id}}?_method=DELETE" method="post">
                   <button id="delete-button" class="btn btn-danger" type="submit" name="button">Delete Post</button>
                 </form>
