@@ -1,6 +1,19 @@
 const express = require("express");
 const db = require("../models");
 const router = express.Router();
+const userid = "";
+
+$('document').on('click', function() {
+  FB.getLoginStatus(function(response) {
+    console.log("loginstatus just ran");
+    userid = response.authResponse.userID;
+
+    console.log("your userID is " + userid);
+
+    console.log(response);
+    console.log(response.status + "is your current login state with facebook.");
+  });
+});
 
 router.get("/", (req, res) => {
   res.redirect("/trades");
@@ -33,7 +46,8 @@ router.post("/trades/api", (req, res) => {
     transmission: req.body.transmission,
     description: req.body.description,
     contact: req.body.contact,
-    zipcode: req.body.zipcode
+    zipcode: req.body.zipcode,
+    userID: userid
   }).then(() => {
     return res.redirect("/trades");
   }).catch((err) => {
