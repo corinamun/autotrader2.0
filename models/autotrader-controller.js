@@ -88,6 +88,13 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
+    },
+    userID: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isNumeric: true
+      }
     }
   });
   return trades;
