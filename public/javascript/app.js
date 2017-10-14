@@ -1,41 +1,15 @@
-var currentuserID = "";
-function currentuser() {
-  FB.getLoginStatus(function(response) {
-    console.log("loginstatus just ran");
-    currentuserID = response.authResponse.userID;
-
-    console.log("your userID is the following ID " + currentuserID);
-
-  });
-};
-
-
-var createuserID = function() {
-  FB.getLoginStatus(function(response) {
-    console.log("loginstatus just ran");
-    $('#userID').val(response.authResponse.userID);
-
-    console.log("your userID is " + response.authResponse.userID);
-
-  });
-};
-
-
 function createPost() {
   console.log("FB loginstatus about to run");
   FB.getLoginStatus(function(response) {
     console.log("loginstatus just ran");
-    // statusChangeCallback(response);
-
     console.log(response);
-    console.log(response.status + "is your current login state with facebook.");
+    console.log(response.status + " is your current login state with facebook.");
 
     if (response.status === "connected") {
       FB.getLoginStatus(function(response) {
         console.log("loginstatus just ran");
         $('#userID').val(response.authResponse.userID);
         $("#modal").modal("show");
-        currentuser();
       });
     } else {
       alert("You are not logged in yet! Please login through facebook before posting any trades!")
