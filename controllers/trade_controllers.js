@@ -26,6 +26,7 @@ router.post("/trades/api", (req, res) => {
     make: req.body.make,
     model: req.body.model,
     year: req.body.year,
+    image: req.body.image,
     mileage: req.body.mileage,
     location: req.body.city,
     color: req.body.color,

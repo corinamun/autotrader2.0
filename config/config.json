@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Insecure",
+    "password": "password",
     "database": "autotraderdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
