@@ -10,6 +10,7 @@
           <div>Make <input id="make" class="user-input" type="text" name="make"></div>
           <div>Model <input id="model" class="user-input" type="text" name="model"></div>
           <div>Year <input id="year" class="user-input" type="number" name="year"></div>
+          <div>Image URL <input id="image" class="user-input" type="text" name="image"></div>
           <div>Mileage <input id="mileage" class="user-input" type="number" name="mileage"></div>
           <div>City <input id="city" class="user-input" type="text" name="city"></div>
           <div>Zipcode <input id="zipcode" class="user-input" type="text" name="zipcode"></div>
@@ -103,7 +104,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title"></h5>
+          <h5 class="modal-title" id="info-title"></h5>
         </div>
         <div class="modal-body">
           <p id="info-contact"></p>
@@ -124,19 +125,17 @@
       {{#each trades}}
         <div class="col-lg-4">
           <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="https://www.lamborghini.com/en-en/sites/en-en/files/DAM/lamborghini/share%20img/centenario-facebook-og.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
             <div class="card-block">
-              <h4 class="card-title">{{this.make}} {{this.model}}</h4>
+              <h4 class="card-title">{{this.year}} {{this.make}} {{this.model}}</h4>
               <ul class="card-text">
-                <li>Year: {{this.year}}</li>
                 <li>Mileage: {{this.mileage}}</li>
                 <li>Location: {{this.location}}</li>
                 <li>Color: {{this.color}}</li>
                 <li>Style: {{this.style}}</li>
               </ul>
               <div id="button-row">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-description= {{this.description}}
-                  data-zipcode= {{this.zipcode}}>More Info</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-zipcode= {{this.zipcode}} data-year = {{this.year}} data-description= "{{this.description}}">More Info</button>
                 <form action="/trades/{{this.id}}?_method=DELETE" method="post">
                   <button id="delete-button" class="btn btn-danger" type="submit" name="button">Delete Post</button>
                 </form>

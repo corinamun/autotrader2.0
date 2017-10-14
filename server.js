@@ -8,12 +8,12 @@ const routes = require("./controllers/trade_controllers.js");
 
 const db = require("./models");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({type: "application/vnd.api+json"}));
 app.use(express.static("public"));
 
 app.use("/", routes);

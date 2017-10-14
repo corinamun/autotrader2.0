@@ -6,8 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-        isAlphanumeric: true
+        notEmpty: true
       }
     },
     model: {
@@ -23,6 +22,13 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true,
         isNumeric: true
+      }
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
       }
     },
     mileage: {
@@ -70,7 +76,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     description: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true
