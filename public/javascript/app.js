@@ -1,8 +1,10 @@
 function createPost() {
+  console.log("FB loginstatus about to run");
   FB.getLoginStatus(function(response) {
+    console.log("loginstatus just ran");
     statusChangeCallback(response);
 
-    console.log(response);      
+    console.log(response);
     console.log(response.status + "is your current login state with facebook.");
 
     if (response.status === "connected") {
