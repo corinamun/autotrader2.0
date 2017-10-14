@@ -1,18 +1,18 @@
 function createPost() {
   FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+    statusChangeCallback(response);
+
+    console.log(response);      
+    console.log(response.status + "is your current login state with facebook.");
+
+    if (response.status === "connected") {
+      $("#create-post").on("click", () => {
+        $("#modal").modal("show");
+      });
+    } else {
+      alert("You are not logged in yet! Please login through facebook before posting any trades!")
+    };
   });
-  console.log(response);
-  console.log(response.status + "is your current login state with facebook.");
-
-  if (response.status === "connected") {
-    $("#create-post").on("click", () => {
-      $("#modal").modal("show");
-    });
-  } else {
-    alert("You are not logged in yet! Please login through facebook before posting any trades!")
-  };
-
 
   $("#submit-btn").on("click", () => {
     $("#modal").modal("hide");
