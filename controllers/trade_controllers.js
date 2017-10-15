@@ -1,8 +1,6 @@
 const express = require("express");
 const db = require("../models");
 const router = express.Router();
-const helper = require("../public/javascript/app");
-const userid = "";
 
 router.get("/", (req, res) => {
   res.redirect("/trades");
@@ -28,6 +26,7 @@ router.post("/trades/api", (req, res) => {
     make: req.body.make,
     model: req.body.model,
     year: req.body.year,
+    image: req.body.image,
     mileage: req.body.mileage,
     location: req.body.city,
     color: req.body.color,
@@ -46,16 +45,12 @@ router.post("/trades/api", (req, res) => {
 });
 
 router.post("/trades/:id", (req, res) => {
-  if (this.userID === currentuserID) {
-    db.trades.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then((result) => {
-      return res.redirect("/trades");
-    });
-  } else {
-    alert("You don't own this post!")
-  };
+  db.trades.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then((result) => {
+    return res.redirect("/trades");
+  });
 });
 module.exports = router;
