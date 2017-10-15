@@ -47,5 +47,13 @@ label {
 #button-row {
   display: flex;
   justify-content: space-around;
+}
 
+.jumbotron {
+  background-image: url("/images/m6-17-e.jpg");
+  background-size: cover;
+  height: 530px;
+  color: #ffffff;
+  font-family: 'Hind Vadodara', sans-serif;
+  padding-top: 20px;
 }

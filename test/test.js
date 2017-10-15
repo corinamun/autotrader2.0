@@ -1,7 +1,7 @@
 var expect = require("chai").expect;
 
-var Trade = require("trade_controllers");
-var trade = Trade ({ show: true });
+// var Trade = require("trade_controllers");
+// var trade = Trade ({ show: true });
 
 describe("trade", function() {
   it("should redirect page to /trades GET", function(trades) {
