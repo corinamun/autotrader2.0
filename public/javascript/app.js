@@ -11,13 +11,11 @@ function createPost() {
         $('#userID').val(response.authResponse.userID);
         $("#modal").modal("show");
       });
-    } else {
-      alert("You are not logged in yet! Please login through facebook before posting any trades!")
-      return;
+     } else {
+    alert("You are not logged in yet! Please login through facebook before posting any trades!")
+       return;
     };
-  });
-}
-
+})
 $("#submit-btn").on("click", () => {
   $("#modal").modal("hide");
   userInput();
