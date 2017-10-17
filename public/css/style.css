@@ -83,7 +83,7 @@ label {
 
 h2 {
   background-color: white;
-  font-size: 30px;
+  font-size: 35px;
   opacity: 0.3;
   font-family: 'Shrikhand', cursive;
 }
@@ -97,6 +97,7 @@ h2 {
 
 .navbar {
   opacity: 0.9;
+  height: auto;
 }
 
 .navbar-brand{
