@@ -71,17 +71,39 @@ label {
 .carousel-inner {
   height: 500px;
   width: 100%;
+  padding-top:85px;
   padding-bottom:0px;
 }
 
 #searchForm {
   position:absolute;
-  top:15%;
+  top:20%;
   left:33%;
 }
 
 h2 {
   background-color: white;
+  font-size: 30px;
   opacity: 0.3;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Shrikhand', cursive;
+}
+
+#subtitle {
+  font-style: italic;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Assistant', sans-serif;
+}
+
+.navbar {
+  opacity: 0.9;
+}
+
+.navbar-brand{
+  font-family: 'Assistant', sans-serif;
+  font-size:25px;
+}
+
+.nav-link {
+  font-family: 'Assistant', sans-serif;
 }

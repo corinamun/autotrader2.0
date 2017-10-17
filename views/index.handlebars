@@ -38,7 +38,8 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Orange County Car Trade App</a>
+  <i class="fa fa-car" aria-hidden="true"></i>
+  <a class="navbar-brand" href="/">Orange County Autotrader <p id="subtitle">for those who need a change of pace</p></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -55,6 +56,8 @@
   </div>
 </nav>
 
+<p>
+</p>
 <!-- Main Content-->
 
 {{!-- <div class="jumbotron">
@@ -88,8 +91,7 @@
     <form class="col-sm-12" id="searchForm">
       <div class="form-group col-sm-4 col-sm-offset-4"><h2 class="text-center">let's find your perfect car</h2>
         <div class="input-group input-group-lg center-block">
-          <input type="text" class="form-control" placeholder="search for a make or model">
-          <span class="input-group-addon"></span>
+          <input type="text" class="form-control" placeholder="search by brand"><button id="search-button" class="btm" type="submit" name="search-button" action="/trades/{{this.make}}?_method=POST" method="post">go</button>
         </div>
       </div>
     </form>

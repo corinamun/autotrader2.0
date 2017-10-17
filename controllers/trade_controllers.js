@@ -21,6 +21,16 @@ router.get("/trades/api", (req, res) => {
   });
 });
 
+// router.get("/trades/make", function(req, res) {
+//   db.trades.findOne({
+//     where: {
+//       make: req.params.make
+//     }
+//   }).then(function(autotraderdb) {
+//     res.json(autotraderdb);
+//   });
+// });
+
 router.post("/trades/api", (req, res) => {
   db.trades.create({
     make: req.body.make,
@@ -38,6 +48,14 @@ router.post("/trades/api", (req, res) => {
     zipcode: req.body.zipcode,
     userID: req.body.userID
   }).then(() => {
+    return res.redirect("/trades");
+  }).catch((err) => {
+    console.error(`ERR = ${err}`);
+  });
+});
+
+router.post("/trades/make", function(req, res) {
+  db.trades.create(req.make).then(() => {
     return res.redirect("/trades");
   }).catch((err) => {
     console.error(`ERR = ${err}`);
