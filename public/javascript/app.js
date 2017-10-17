@@ -16,6 +16,7 @@ function createPost() {
        return;
     };
 });
+}
 $("#submit-btn").on("click", () => {
   $("#modal").modal("hide");
   userInput();
