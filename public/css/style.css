@@ -1,10 +1,5 @@
 /* style */
 
-body {
-  padding-top: 4.5rem;
-  overflow: scroll;
-}
-
 footer {
   position: fixed;
   bottom: 0;
@@ -59,13 +54,14 @@ label {
   padding-top: 20px;
 }*/
 
-.carousel-caption {
-  top:0;
+/*.carousel-caption {
+  top:40px;
   bottom:auto;
   padding-top:25px;
   font-family: 'Raleway', sans-serif;
-  font-size: 200px;
-}
+  font-size: 100px;
+  opacity: 0.5;
+}*/
 
 #carouselControls {
   width: 100%;
@@ -80,6 +76,12 @@ label {
 
 #searchForm {
   position:absolute;
-  top:35%;
+  top:15%;
   left:33%;
+}
+
+h2 {
+  background-color: white;
+  opacity: 0.3;
+  font-family: 'Raleway', sans-serif;
 }
