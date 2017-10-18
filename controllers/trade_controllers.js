@@ -11,6 +11,7 @@ router.get("/trades", (req, res) => {
     const hbsObject = {
       trades: data
     };
+    console.log(req.body);
     return res.render("index", hbsObject);
   });
 });
@@ -20,16 +21,6 @@ router.get("/trades/api", (req, res) => {
     return res.json(data);
   });
 });
-
-// router.get("/trades/make", function(req, res) {
-//   db.trades.findOne({
-//     where: {
-//       make: req.params.make
-//     }
-//   }).then(function(autotraderdb) {
-//     res.json(autotraderdb);
-//   });
-// });
 
 router.post("/trades/api", (req, res) => {
   db.trades.create({
@@ -44,7 +35,6 @@ router.post("/trades/api", (req, res) => {
     transmission: req.body.transmission,
     description: req.body.description,
     contact: req.body.contact,
-
     zipcode: req.body.zipcode,
     userID: req.body.userID
   }).then(() => {
@@ -56,6 +46,7 @@ router.post("/trades/api", (req, res) => {
 
 router.post("/trades/make", function(req, res) {
   db.trades.create(req.make).then(() => {
+    console.log(req.body);
     return res.redirect("/trades");
   }).catch((err) => {
     console.error(`ERR = ${err}`);
@@ -63,12 +54,16 @@ router.post("/trades/make", function(req, res) {
 });
 
 router.post("/trades/:id", (req, res) => {
-  db.trades.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then((result) => {
-    return res.redirect("/trades");
-  });
+  if (req.body.userID === req.body.currentUserID) {
+    db.trades.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then((result) => {
+      return res.redirect("/trades");
+    });
+  } else if (req.body.userID !== req.body.currentUserID) {
+    alert("You don't own this post!");
+  };
 });
 module.exports = router;

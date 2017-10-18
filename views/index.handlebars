@@ -1,3 +1,5 @@
+<script src="./javascript/app.js" charset="utf-8"></script>
+
 <!-- Modal for creating new post -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -28,7 +30,9 @@
           <div>Contact <input id="contact" class="user-input" type="text" name="contact"></div>
           <div class="userID">
             <input type="hidden" name="userID" value="hype" class="user-input" id="userID">
+            <input type="hidden" name="currentUserID" value="hype" class="user-input" id="currentUserID">
           </div>
+
           <button type="submit" class="btn btn-primary" id="submit-btn" data-dissmiss="modal">Submit</button>
         </form>
       </div>
@@ -143,9 +147,11 @@
               </ul>
               <div id="button-row">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail-modal" data-make= {{this.make}} data-model= {{this.model}} data-contact= {{this.contact}} data-transmission= {{this.transmission}} data-zipcode= {{this.zipcode}} data-year = {{this.year}} data-description= "{{this.description}}">More Info</button>
-                <form action="/trades/{{this.id}}?_method=DELETE" method="post">
-                  <button id="delete-button" class="btn btn-danger" type="submit" name="button">Delete Post</button>
-                </form>
+                {{!-- {{#if currentLoginID === this.userID}} --}}
+			             <form action="/trades/{{this.id}}" method="post">
+                     <button class="btn btn-danger delete-button" type="submit" name="button">Delete Post</button>
+                  </form>
+				        {{!-- {{/if}} --}}
               </div>
             </div>
           </div>
