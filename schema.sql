@@ -2,3 +2,4 @@
 DROP DATABASE IF EXISTS autotraderdb;
 -- Creates the "todolist" database --
 CREATE DATABASE autotraderdb;
+

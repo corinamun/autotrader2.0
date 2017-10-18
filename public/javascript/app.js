@@ -1,3 +1,7 @@
+var currentLoginID = "";
+
+// $('.delete-button').hide();
+
 function createPost() {
   console.log("FB loginstatus about to run");
   FB.getLoginStatus(function(response) {
@@ -6,16 +10,14 @@ function createPost() {
     console.log(response.status + " is your current login state with facebook.");
 
    if (response.status === "connected") {
-      FB.getLoginStatus(function(response) {
-        console.log("loginstatus just ran");
-        $('#userID').val(response.authResponse.userID);
-        $("#modal").modal("show");
-      });
+      console.log("loginstatus just ran");
+      $('#userID').val(response.authResponse.userID);
+      $("#modal").modal("show");
     } else {
     alert("You are not logged in yet! Please login through facebook before posting any trades!")
        return;
     };
-});
+  });
 }
 $("#submit-btn").on("click", () => {
   $("#modal").modal("hide");
@@ -54,3 +56,27 @@ $("#detail-modal").on("show.bs.modal", (event) => {
 $('#create-post').on('click', function() {
   createPost();
 });
+
+$(document).on('click', function() {
+  FB.getLoginStatus(function(response) {
+    if (response.status === "connected") {
+      currentLoginID = response.authResponse.userID;
+      $('#currentUserID').val(response.authResponse.userID);
+      console.log(currentLoginID);
+    } else {
+      currentLoginID = "logged out";
+      $('#currentUserID').val("logged out");
+      console.log(currentLoginID);
+    };
+  });
+});
+
+
+
+// for (var i = 0; i < posts.length; i++) {
+  // if (this.userID === currentLoginID) {
+  //   $('.delete-button').show();
+  // } else {
+  //   $('.delete-button').hide();
+  // };
+// }
